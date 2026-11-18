@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENING JAMG‘ARMAM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">🐷 MENING JAMG‘ARMAM</div>
+  <div class="top-stats">
+    <div>💰 <b id="topMoney">0</b></div>
+    <div>⭐ <b id="topPoints">0</b></div>
+    <div>🏆 <b id="topRecord">0</b></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-text">
+      <span class="tag">✨ MOLIYAVIY SARGUZASHT</span>
+      <h1>Orzularing sari<br><span>pul yig‘!</span></h1>
+      <p>Jamg‘arma yarat, maqsadlaringga erish va virtual bankni boshqar!</p>
+      <button class="main-btn" id="dailyGiftBtn">🎁 Kunlik sovg‘ani olish</button>
+      <p class="gift-message" id="giftMessage"></p>
+    </div>
+    <div class="piggy">🐷</div>
+    <div class="coin coin-one">🪙</div>
+    <div class="coin coin-two">💰</div>
+  </section>
+
+  <section class="summary-grid">
+    <div class="summary-card wallet-card">
+      <span class="summary-icon">👛</span>
+      <p>Hamyondagi pul</p>
+      <h2><span id="wallet">0</span> <small>so‘m</small></h2>
+    </div>
+    <div class="summary-card bank-card">
+      <span class="summary-icon">🏦</span>
+      <p>Bankdagi omonat</p>
+      <h2><span id="bankBalance">0</span> <small>so‘m</small></h2>
+    </div>
+    <div class="summary-card points-card">
+      <span class="summary-icon">⭐</span>
+      <p>Jamg‘arma ballari</p>
+      <h2 id="points">0</h2>
+    </div>
+    <div class="summary-card record-card">
+      <span class="summary-icon">🏆</span>
+      <p>Eng katta jamg‘arma</p>
+      <h2><span id="record">0</span> <small>so‘m</small></h2>
+    </div>
+  </section>
+
+  <section class="main-grid">
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🐷 Pul yig‘ish</h2>
+        <span class="pill green">Jamg‘ar</span>
+      </div>
+      <div class="piggy-big">🐷</div>
+      <p class="center muted">Hamyoningga qancha pul qo‘shmoqchisan?</p>
+      <div class="amount-buttons">
+        <button data-add="100">+100</button>
+        <button data-add="500">+500</button>
+        <button data-add="1000">+1 000</button>
+        <button data-add="5000">+5 000</button>
+      </div>
+      <div class="input-row">
+        <input type="number" id="customAmount" min="1" placeholder="Boshqa miqdor...">
+        <button class="small-btn" id="addCustom">Qo‘shish</button>
+      </div>
+      <p class="message" id="saveMessage">Pul yig‘ishni boshlang!</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🎯 Mening maqsadim</h2>
+        <span class="pill yellow">Orzu</span>
+      </div>
+      <div class="goal-visual">🚀</div>
+      <label for="goalName">Maqsad nomi</label>
+      <input id="goalName" type="text" placeholder="Masalan: Velosiped">
+      <label for="goalAmount">Kerakli pul miqdori</label>
+      <input id="goalAmount" type="number" min="1" placeholder="Masalan: 10000">
+      <button class="main-btn full" id="setGoalBtn">🎯 Maqsadni belgilash</button>
+      <div class="goal-info">
+        <div class="goal-label">
+          <b id="goalTitle">Maqsad belgilanmagan</b>
+          <span id="goalPercent">0%</span>
+        </div>
+        <div class="progress-track"><div id="goalProgress"></div></div>
+        <p class="muted small" id="goalDetails">Maqsad qo‘ysang, jamg‘arishni boshlashing mumkin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-grid">
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🏦 Virtual bank</h2>
+        <span class="pill blue">Omonat</span>
+      </div>
+      <div class="bank-illustration">🏦</div>
+      <p class="muted center">Virtual omonatingga pul qo‘y. Har bir o‘yin kuni uchun 2% bonus olishing mumkin.</p>
+      <div class="input-row">
+        <input type="number" id="bankAmount" min="1" placeholder="Miqdor kiriting">
+      </div>
+      <div class="two-buttons">
+        <button class="main-btn" id="depositBtn">⬆ Pul qo‘yish</button>
+        <button class="secondary-btn" id="withdrawBtn">⬇ Pul olish</button>
+      </div>
+      <button class="bonus-btn" id="interestBtn">✨ Omonat bonusini olish</button>
+      <p class="message" id="bankMessage">Bu faqat virtual o‘yin banki.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🧾 Xarajatlar</h2>
+        <span class="pill red">Hisob-kitob</span>
+      </div>
+      <div class="expense-visual">🛍️</div>
+      <label for="expenseName">Xarajat nomi</label>
+      <input type="text" id="expenseName" placeholder="Masalan: Daftar">
+      <label for="expenseAmount">Xarajat miqdori</label>
+      <input type="number" id="expenseAmount" min="1" placeholder="Miqdor">
+      <button class="danger-btn full" id="expenseBtn">− Xarajatni yozish</button>
+      <div class="expense-total">
+        Jami xarajat: <b id="totalExpenses">0 so‘m</b>
+      </div>
+      <div id="expenseList" class="expense-list">
+        <p class="muted small">Hozircha xarajat yo‘q.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel tasks-panel">
+    <div class="panel-heading">
+      <h2>📅 Kunlik topshiriqlar</h2>
+      <span class="pill green">Mukofotlar</span>
+    </div>
+    <div class="task-list" id="taskList"></div>
+  </section>
+
+  <section class="panel shop-panel">
+    <div class="panel-heading">
+      <h2>🛍️ Virtual do‘kon</h2>
+      <span class="pill yellow">Xaridlar</span>
+    </div>
+    <p class="muted small">Jamg‘argan ballaring yordamida buyumlarni och!</p>
+    <div class="shop-list" id="shopList"></div>
+  </section>
+
+  <section class="bottom-grid">
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🎁 Pul sovg‘alari</h2>
+      </div>
+      <div class="gift-box">
+        <div class="gift-icon">🎁</div>
+        <div>
+          <h3>Sirli sovg‘a</h3>
+          <p class="muted small">Tasodifiy virtual mukofot ol!</p>
+        </div>
+      </div>
+      <button class="main-btn full" id="mysteryGiftBtn">Sovg‘ani ochish</button>
+      <p class="message" id="mysteryMessage"></p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>🏅 Bosqichlar</h2>
+      </div>
+      <div class="level-display">
+        <div class="level-icon">🌟</div>
+        <div>
+          <h3 id="levelName">Boshlovchi</h3>
+          <p class="muted small">Bosqich: <b id="levelNumber">1</b></p>
+        </div>
+      </div>
+      <div class="progress-track"><div id="levelProgress"></div></div>
+      <p class="muted small" id="levelDetails">Keyingi bosqich uchun pul yig‘!</p>
+    </div>
+  </section>
+
+  <section class="panel history-panel">
+    <div class="panel-heading">
+      <h2>📊 Jamg‘arma hisoblagichi</h2>
+    </div>
+    <div class="history-grid">
+      <div><span>Jami yig‘ilgan</span><b id="totalSaved">0 so‘m</b></div>
+      <div><span>Jami xarajat</span><b id="totalSpent">0 so‘m</b></div>
+      <div><span>Jami bonus</span><b id="totalBonus">0 so‘m</b></div>
+      <div><span>Jami xaridlar</span><b id="totalPurchases">0</b></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 MENING JAMG‘ARMAM | Ulug'bek Ro'ziboev</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
